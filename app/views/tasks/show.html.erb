@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= @task.title %></h5>
+      <p class="card-text"><%= @task.details %></p>
+      <div class="input-group-text">
+        <input class="form-check-input mt-0" type="checkbox" value="<%= @task.completed %>" aria-label="Checkbox for following text input">
+      </div>
+      <a href="#" class="card-link"><%= link_to 'Edit this task!', edit_task_path(@task) %></a>
+      <a href="#" class="card-link"><%= link_to 'Destroy', destroy_path(@task), data: {:confirm => 'Are you sure?'}, :method => :delete %></a>
+    </div>
+  </div>
+</div>
+<p><%= link_to 'Back to homepage', tasks_path %></p>

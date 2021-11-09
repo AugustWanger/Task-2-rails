@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <h1>My tasks</h1>
+</div>
+
+<div class="container-fluid">
+  <% @tasks.each do |task|%>
+    <div class="card mb-2" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= task.title %></h5>
+        <p class="card-text"><%= task.details %></p>
+        <div class="input-group-text" style="width: 3rem;">
+          <input class="form-check-input mt-0" type="checkbox" value="<%= task.completed %>" aria-label="Checkbox for following text input">
+        </div>
+        <a href="#" class="card-link"><%= link_to 'Edit this task!', task_path(task) %></a>
+      </div>
+    </div>
+  <% end %>
+  <p><%= link_to 'new task', new_task_path %></p>
+</div>
